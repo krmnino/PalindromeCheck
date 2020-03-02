@@ -4,7 +4,7 @@
 
 bool is_palindrome(Stack<char>* s, std::string word) {
 	for (int i = 0; i < word.length(); i++) {
-		if (word[i] != s->pop()->get_data()) {
+		if (word[i] != s->pop()) {
 			return false;
 		}
 	}

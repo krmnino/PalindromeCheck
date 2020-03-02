@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Node.cpp"
 
 template<typename T>class Stack {
@@ -6,8 +7,9 @@ private:
 	int size;
 public:
 	Stack() : size(0), head(nullptr) {};
+	~Stack() {}
 	void push(T);
-	Node<T>* pop();
+	T pop();
 	T peek();
 	bool is_empty();
 };
@@ -19,14 +21,14 @@ template<typename T> void Stack<T>::push(T data) {
 	this->size++;
 }
 
-template<typename T> Node<T>* Stack<T>::pop() {
+template<typename T> T Stack<T>::pop() {
 	if (this->is_empty()) {
-		return nullptr;
+		return NULL;
 	}
 	Node<T>* n = this->head;
 	this->head = this->head->get_next();
 	this->size--;
-	return n;
+	return n->get_data();
 }
 template<typename T> T Stack<T>::peek() {
 	return this->head;

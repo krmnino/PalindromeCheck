@@ -6,6 +6,7 @@ private:
 	Node* next;
 public:
 	Node(T d) : data(d), next(nullptr) {}
+	~Node() {}
 	void set_data(T d);
 	void set_next(Node* n);
 	T get_data();
